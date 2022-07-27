@@ -1,10 +1,10 @@
 from pytube import YouTube
 
 def download_video():
-    DOWNLOAD_FOLDER = "video"
+    DOWNLOAD_FOLDER = fr"D:\python\python_lesson\parsers\python_parsers\parser_playlist_video\al/{'alyn2'.upper()}"
 
     try:
-        with open(file="links_video_unic.txt", mode="r") as file:
+        with open(file="al/link_video_unic.txt", mode="r") as file:
             source = file.read()
             for links in source.split("\n"):
                 video_object = YouTube(links)
