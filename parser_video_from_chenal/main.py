@@ -1,4 +1,8 @@
+import os
+
 from selenium import webdriver
+
+folder_name = input(" Enter folder name: ")
 
 user_agent = {
     "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
@@ -17,7 +21,11 @@ try:
         links_1 = links1.find_elements_by_tag_name("a")
         for links2 in links_1:
             links_2 = links2.get_attribute("href")
-            with open(file="links_video.txt", mode="a", newline="") as file:
+
+            if not os.path.exists(folder_name):
+                os.mkdir(folder_name)
+
+            with open(file=f"{folder_name}/links_video.txt", mode="a", newline="") as file:
                 file.write(links_2 + "\n")
 
 
