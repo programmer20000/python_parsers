@@ -29,11 +29,11 @@ try:
             # print(l2)
 
             if exclude not in l2:
-                # print(l2)
                 if not os.path.exists(name_folder):
                     os.mkdir(name_folder)
-                with open(file=f"{name_folder}/link_video.txt",mode="a",newline="") as file:
-                    file.write(l2+"\n")
+
+                with open(file=f"{name_folder}/links_video.txt", mode="a", newline="") as file:
+                    file.write(l2 + "\n")
 
 except Exception as exception:
     print(exception)
